@@ -26,6 +26,7 @@ export function CompanyLogos() {
               width={50}
               height={40}
               className="w-auto h-auto brightness-0 invert"
+              unoptimized
             />
           </div>
         </motion.div>
