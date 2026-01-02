@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion, useAnimation } from "framer-motion";
 import { CheckCircle, ChevronRight } from "lucide-react";
 import type { Step } from "@/types";
+import { stepFeaturesConfig } from "../config/step-features.config";
 
 interface StepCardProps {
   step: Step;
@@ -12,6 +13,10 @@ interface StepCardProps {
 }
 
 export function StepCard({ step, index, mainControls }: StepCardProps) {
+  const stepFeatures = stepFeaturesConfig.find(
+    (config) => config.stepNumber === step.number
+  )?.features || [];
+
   return (
     <motion.div
       variants={{
@@ -54,11 +59,11 @@ export function StepCard({ step, index, mainControls }: StepCardProps) {
                 <p className="text-gray-300">{step.description}</p>
 
                 <ul className="mt-5 space-y-2">
-                  {[1, 2, 3].map((item) => (
-                    <li key={item} className="flex items-start gap-2">
+                  {stepFeatures.map((feature) => (
+                    <li key={feature.id} className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-purple-400 mt-0.5 shrink-0" />
                       <span className="text-sm text-gray-300">
-                        Fonctionnalité clé #{item} pour cette étape
+                        {feature.description}
                       </span>
                     </li>
                   ))}
