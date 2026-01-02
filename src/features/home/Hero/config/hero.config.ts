@@ -3,7 +3,7 @@ export const heroConfig = {
         label: "Nouveau",
         text: "— Notre plateforme vient de subir une mise à niveau majeure",
     },
-    headline: "Rationalisez votre flux de travail avec notre solution SaaS",
+    headline: "Rationalisez votre flux de travail avec notre solution tout-en-un",
     description:
         "Augmentez la productivité et simplifiez les opérations avec notre plateforme puissante et facile à utiliser.",
     primaryButton: {
