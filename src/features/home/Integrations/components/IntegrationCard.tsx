@@ -22,6 +22,7 @@ export function IntegrationCard({ integration }: IntegrationCardProps) {
               width={40}
               height={40}
               className="relative z-10 w-8 h-8 object-contain brightness-0 invert"
+              unoptimized
             />
           </div>
         </div>
